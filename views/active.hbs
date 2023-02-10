@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins",sans-serif;
+      }
+      body {
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: center;
+        align-content: center;
+        background-color: black;
+      }
+      form{
+        width: 40%;
+        margin: auto;
+      }
+      form input{
+        display: block;
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        width: 100%;
+        background-color: black;
+        border: 2px solid lawngreen;
+        border-radius: 0.8rem;
+        margin-bottom: 1.5rem;
+        color: lawngreen;
+        outline: 0px;
+      }
+      form input:hover{
+        border: 2px solid yellow;
+      }
+      form h1{
+        margin: 1rem 0;
+        font-size: 2.4rem;
+        color: yellow;
+        text-align: center;
+      }
+      form button{
+        margin: 1rem auto;
+        background-color: lawngreen;
+        color: black;
+        padding: 1rem;
+        display: block;
+        border-radius: 0.8rem;
+        font-size: 1.5rem;
+      }
+      form button:hover{
+        background-color:rgba(126, 252, 0, 0.828);
+      }
+      @media screen and (max-width:550px){
+        form{
+          width: 88%;
+        }
+        form h1{
+          margin: 3rem auto;
+        }
+        form input{
+          margin-bottom: 1.5rem;
+        }
+        form button{
+          margin: 3rem auto;
+        }
+      }
+      @media screen and (max-width:450px){
+        form h1{
+          font-size:9vw;
+        }        
+      }
+    </style>
+  </head>
+  <body>
+      <form action="/sub_active" method="post">
+        <h1>Create Account</h1>
+        <input type="text" placeholder="First name" class="smler" name="fname" required />
+        <input type="text" placeholder="Username" class="sml" name="uname" required />
+        <input type="password" placeholder="Password" name="pword" required />
+        <input
+          type="password"
+          placeholder="Confirm password"
+          name="cword"
+          required
+        />
+        <button type="button" onclick="sub()"><i class="fa-solid fa-file-export"></i></button>
+      </form>
+    <script>
+      var pword;
+      var cword;
+      function sub() {
+        pword = document.getElementsByName("pword")[0].value;
+        cword = document.getElementsByName("cword")[0].value;
+        if (cword == pword) {
+          document
+            .getElementsByTagName("button")[0]
+            .setAttribute("type", "submit");
+        } else {
+          document.getElementsByName("cword")[0].focus();
+        }
+      }
+    </script>
+  </body>
+</html>

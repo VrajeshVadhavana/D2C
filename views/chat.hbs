@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "poppins",sans-serif;
+            }
+            body{
+                background-color: black;
+                display: flex;
+                flex-flow: wrap row;
+                justify-content: center;
+                align-content: center;
+            }
+            div{
+                width: 100%;
+                display: grid;
+                grid-template-columns:32% 32%;
+                justify-content: space-evenly;
+            }
+            div a{
+                border:2px solid lawngreen;
+                text-decoration: none;
+                font-size: 3rem;
+                letter-spacing: 1px;
+                color: lawngreen;
+                border-radius: 2rem;
+                text-align: center;
+                padding: 5rem 0;
+                margin: 2rem 0;
+            }
+            div a:hover{
+                background-color: lawngreen;
+                color: black;
+                transition: 0.3s;
+            }
+            @media screen and (max-width:1280px){
+                div{
+                    grid-template-columns: 38% 38%;
+                }
+            }
+            @media screen and (max-width:1090px){
+                div{
+                    grid-template-columns: 42% 42%;
+                }                
+            }
+            @media screen and (max-width:967px){
+                div{
+                    grid-template-columns:60%;
+                }                
+            }
+            @media screen and (max-width:706px){
+                div{
+                    grid-template-columns: 90%;
+                }                
+            }
+            @media screen and (max-width:468px){
+                div a{
+                    margin: 3rem 0;
+                    font-size: 11vw;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a href="/active_account">Create account</a>
+            <a href="/log_in">Log in</a>
+        </div>
+    </body>
+</html>

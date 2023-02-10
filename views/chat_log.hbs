@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins",sans-serif;
+      }
+      body{
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: center;
+        align-content: center;
+        background-color: black;
+      }
+      section{
+        width: 60%;
+        height: 98vh;
+        margin: auto;
+        display: grid;
+        grid-template-columns: auto;
+        align-content: space-between;
+      }
+      section form{
+        width: 100%;
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    form input{
+        border-radius: 0.8rem;
+        width: 78%;
+        background-color: black;
+        border: 2px solid orange;
+        outline: 0px;
+        color:orange;
+        letter-spacing: 1px;
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+    form button{
+        padding: 1rem 2.4rem;
+        font-size:2rem;
+        border-radius: 0.8rem;
+        border: 0px;
+        background-color: yellow;
+    }
+    form button:hover{
+        background-color: rgb(234, 234, 0);
+    }
+    div h1{
+        padding: 2rem;
+        width: 45%;
+        height: 24vh;
+        font-size: 1.5rem;
+    }
+    .client{
+        color:yellow;
+        letter-spacing: 1px;
+        border: 2px solid yellow;
+        border-radius:0 6rem 6rem 6rem;
+    }
+    .server{
+        border-radius: 6rem 6rem 0rem 6rem;
+        letter-spacing: 1px;
+        float: right;
+        border:2px solid lawngreen;
+        color: lawngreen;
+        font-weight:bold;
+    }
+    .status{
+        letter-spacing: 1px;
+        color: red;
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: center;
+        align-items: center;
+    }
+    .status i{
+        margin-right: 1rem;
+    }
+    @media screen and (max-width:520px){
+        section{
+            width:95%;
+            height: 98vh;
+        }        
+        form input{
+            width: 78%;
+        }
+        div h1{
+            width: 90%;
+            max-width: 400px;
+            word-wrap: break-word;
+            font-size: 1.5rem;
+        }
+        form input{
+            padding: 0.8rem 1rem;
+        }
+        form button{
+            padding: 0.8rem;
+        }
+    }
+    @media screen and (max-width:340px){
+        form input{
+            font-size: 6vw;
+        }       
+        form button{
+            font-size: 8vw;
+        }
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <section>
+        <form action="/message" method="post">
+            <input type="text" placeholder="D2C Talk..." name="txt" autofocus/>
+            <button type="button" onclick="send()"><i class="fa-brands fa-telegram"></i></button>
+        </form>
+        <div>
+            <h1 id="client" class="client">{{message}}</h1>
+        </div>
+        <div>
+            <h1 id="server" class="server">{{res}}</h1>
+        </div>   
+        <h1 class="status">
+            <i class="fa-solid fa-circle"></i>Offline
+        </h1>  
+    </section>
+    <script>
+      var txt;
+     
+      function send() {
+        txt = document.getElementsByName("txt")[0].value;
+        if (txt != "") {
+          document.getElementsByTagName("button")[0].setAttribute("type", "submit");
+        } 
+        else {
+          document.getElementsByName("txt")[0].focus();
+        }
+      }
+    </script>
+  </body>
+</html>
