@@ -125,20 +125,21 @@ padding: 0.2rem;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
-    <section>
+    <section>  
+        <h1 class="status">
+            <i class="fa-solid fa-circle"></i>Offline
+        </h1>
+        
+        <div>
+            <h1 id="server" class="server">{{res}}</h1>
+        </div>
+        <div>
+            <h1 id="client" class="client">{{message}}</h1>
+        </div> 
         <form action="/message" method="post">
             <input type="text" placeholder="Ask to vrajesh..." name="txt" autofocus/>
             <button type="button" onclick="send()"><i class="fa-brands fa-telegram"></i></button>
         </form>
-        <div>
-            <h1 id="client" class="client">{{message}}</h1>
-        </div>
-        <div>
-            <h1 id="server" class="server">{{res}}</h1>
-        </div>   
-        <h1 class="status">
-            <i class="fa-solid fa-circle"></i>Offline
-        </h1>  
     </section>
     <script>
       var txt;
