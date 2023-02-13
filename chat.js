@@ -43,7 +43,8 @@ app.post("/sub_active",(req,res)=>{
     })
 });
 app.set("strictQuery",true);
-app.post("/log_in",(req,res)=>{
+setInterval(function(){
+ app.post("/log_in",(req,res)=>{
     var fame = req.body.uname;
     var pword = req.body.pword;
     mongo.collection("data").findOne({"Username":fame,"Password":pword},(err,data)=>{
@@ -64,6 +65,8 @@ app.post("/log_in",(req,res)=>{
         }
     })
 });
+   
+},3000)
 app.post("/message",(req,res)=>{
     var msg = req.body.txt;
     mongo.collection("data").updateOne({Username:req.cookies.User},{$set:{"message":msg,"reply":""}},function(err,data){
