@@ -65,7 +65,6 @@ app.set("strictQuery",true);
     })
 });
 
-setInterval(function(){
     app.post("/message",(req,res)=>{
     var msg = req.body.txt;
     mongo.collection("data").updateOne({Username:req.cookies.User},{$set:{"message":msg,"reply":""}},function(err,data){
@@ -80,7 +79,6 @@ setInterval(function(){
     });
 });
     
-},3000)
 app.listen(port,(err)=>{
     if(err){
         console.log("error")
