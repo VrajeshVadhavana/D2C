@@ -86,9 +86,17 @@
     </head>
     <body>
         <form action="/log_in" method="post">
-            <input type="text" placeholder="Username" name="uname" required>
+            <input type="text" placeholder="Username" name="uname" onblur="user()" required>
             <input type="password" placeholder="Password" name="pword" required>
             <button type="submit"><i class="fa-solid fa-right-to-bracket"></i></button>
         </form>
+        <script>
+        var use;
+        function user(){
+            use = document.getElementsByName("uname")[0].value;
+            use = use.trim();
+            document.getElementsByName("uname")[0].value=use;
+        }
+        </script>
     </body>
 </html>
