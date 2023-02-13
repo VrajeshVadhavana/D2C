@@ -84,7 +84,7 @@
       <form action="/sub_active" method="post">
         <h1>Create Account</h1>
         <input type="text" placeholder="First name" class="smler" name="fname" required />
-        <input type="text" placeholder="Username" class="sml" name="uname" required />
+        <input type="text" placeholder="Username" class="sml" name="uname" onblur="user()" required />
         <input type="password" placeholder="Password" name="pword" required />
         <input
           type="password"
@@ -97,6 +97,7 @@
     <script>
       var pword;
       var cword;
+      var use;
       function sub() {
         pword = document.getElementsByName("pword")[0].value;
         cword = document.getElementsByName("cword")[0].value;
@@ -107,6 +108,11 @@
         } else {
           document.getElementsByName("cword")[0].focus();
         }
+      }
+      function user(){
+        use = document.getElementsByName("uname")[0].value;
+        use = use.trim();
+        document.getElementsByName("uname")[0].value=use;
       }
     </script>
   </body>
